@@ -6,10 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadTable(){
     const carData = await fetchCarData();
     const orderedData = orderByVehicleModel(carData, "vehicle_model")
+    let response = ""
 
     const target = document.getElementById("swt-table-body")
-
-    let response = ""
 
     for(var i of orderedData){
         response += createCells(i)
